@@ -7,8 +7,8 @@ data class Likes(val likesCount: Int = 0, val doesTheUserLikeIt: Boolean = false
 data class RepostsCounter(val repostsCount: Int = 0, val didTheUserRepostIt: Boolean = false) {
 }
 
-class Image() {}
-class Video() {}
+class Image(url : String) {}
+class Video(url : String) {}
 
 data class Post(
     val id: Int = 0,
