@@ -1,18 +1,24 @@
 package ru.netology
 
+
 data class Likes(val likesCount: Int = 0, val doesTheUserLikeIt: Boolean = false) {
 }
 
-data class Reposts(val repostsCount: Int = 0, val didTheUserRepostIt: Boolean = false) {
+data class RepostsCounter(val repostsCount: Int = 0, val didTheUserRepostIt: Boolean = false) {
 }
+
+class Image() {}
+class Video() {}
 
 data class Post(
     val id: Int = 0,
     val fromId: Int = 0,
     val views: Int = 0,
     val text: String = "-",
+    val image : Image?,
+    val video: Video?,
     val likes: Likes = Likes(),
-    val reposts: Reposts = Reposts()
+    val repostsCounter: RepostsCounter = RepostsCounter()
 ) {
 }
 
@@ -45,10 +51,10 @@ object WallService {
 }
 
 fun main() {
-    WallService.add(Post(1, 2, 60))
-    WallService.add(Post(5))
+    WallService.add(Post(1, 2, 60, image = null, video = null))
+    WallService.add(Post(5, image = null, video = null))
     WallService.printAll()
 
-    println(WallService.update(Post(5, likes = Likes(100, false))))
+    println(WallService.update(Post(5, likes = Likes(100, false), image = null, video = null)))
     WallService.printAll()
 }

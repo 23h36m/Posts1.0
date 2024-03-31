@@ -10,7 +10,7 @@ class WallServiceTest {
     fun addTest() {
         val serviceTest = WallService
 
-        val post = serviceTest.add(Post())
+        val post = serviceTest.add(Post(image = null, video = null))
 
         val result = post.id
 
@@ -22,9 +22,9 @@ class WallServiceTest {
 
         val serviceTest = WallService
 
-        serviceTest.add(Post())
+        serviceTest.add(Post(image = null, video = null))
 
-        val update = Post(1)
+        val update = Post(1, image = null, video = null)
 
         val result = serviceTest.update(update)
 
@@ -36,9 +36,9 @@ class WallServiceTest {
 
         val serviceTest = WallService
 
-        serviceTest.add(Post())
+        serviceTest.add(Post(image = null, video = null))
 
-        val update = Post(5)
+        val update = Post(5, image = null, video = null)
 
         val result = serviceTest.update(update)
 
